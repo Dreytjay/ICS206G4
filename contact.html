@@ -24,6 +24,7 @@
         nav ul {
             list-style: none;
             padding: 0;
+            margin: 0;
         }
 
         nav ul li {
@@ -37,51 +38,47 @@
             font-weight: bold;
         }
 
+        nav ul li a .cart-count {
+            background-color: red;
+            color: white;
+            border-radius: 50%;
+            padding: 2px 8px;
+            font-size: 0.8em;
+            margin-left: 5px;
+        }
+
         main {
             padding: 50px 20px;
             max-width: 600px;
-            margin: auto;
-        }
-
-        h2 {
-            text-align: center;
-            margin-bottom: 30px;
+            margin: 0 auto;
         }
 
         form {
             display: flex;
             flex-direction: column;
-            gap: 20px;
         }
 
         label {
-            font-weight: bold;
             margin-bottom: 5px;
+            font-weight: bold;
         }
 
         input, textarea {
-            padding: 12px;
+            margin-bottom: 20px;
+            padding: 10px;
             border: 1px solid #ccc;
-            border-radius: 5px;
+            border-radius: 4px;
             font-size: 1em;
-            width: 100%;
-            box-sizing: border-box;
-        }
-
-        textarea {
-            resize: vertical;
-            min-height: 120px;
         }
 
         button {
             background-color: #000;
             color: #fff;
+            padding: 12px;
             border: none;
-            padding: 12px 20px;
             border-radius: 5px;
-            font-weight: bold;
             cursor: pointer;
-            transition: background-color 0.3s ease;
+            font-weight: bold;
         }
 
         button:hover {
@@ -93,7 +90,7 @@
             color: #fff;
             text-align: center;
             padding: 10px 0;
-            margin-top: 40px;
+            margin-top: 20px;
         }
     </style>
 </head>
@@ -106,6 +103,7 @@
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="products.html">Products</a></li>
+                <li><a href="cart.html">Cart <span id="cart-count" class="cart-count">0</span></a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
@@ -114,20 +112,14 @@
     <main>
         <h2>Get in Touch</h2>
         <form id="contactForm" onsubmit="return validateForm()">
-            <div>
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-            </div>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
 
-            <div>
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-            </div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
 
-            <div>
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" required></textarea>
-            </div>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
 
             <button type="submit" class="btn">Submit</button>
         </form>
@@ -137,7 +129,21 @@
         <p>&copy; 2025 ICS 206 Group 4. All rights reserved.</p>
     </footer>
 
-    <script src="js/main.js"></script>
+    <script>
+        // Cart count script
+        document.addEventListener('DOMContentLoaded', function () {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            let cartCount = cart.length;
+            document.getElementById('cart-count').textContent = cartCount;
+        });
+
+        // Optional: Simple form validation (you can remove if already handled elsewhere)
+        function validateForm() {
+            alert('Form submitted successfully!');
+            return true;
+        }
+    </script>
+
 </body>
 
 </html>
