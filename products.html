@@ -24,6 +24,7 @@
         nav ul {
             list-style: none;
             padding: 0;
+            margin: 0;
         }
 
         nav ul li {
@@ -35,6 +36,15 @@
             color: #fff;
             text-decoration: none;
             font-weight: bold;
+        }
+
+        nav ul li a .cart-count {
+            background-color: red;
+            color: white;
+            border-radius: 50%;
+            padding: 2px 8px;
+            font-size: 0.8em;
+            margin-left: 5px;
         }
 
         .products {
@@ -95,7 +105,7 @@
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="products.html">Products</a></li>
-                <li><a href="cart.html">Cart</a></li>
+                <li><a href="cart.html">Cart <span id="cart-count" class="cart-count">0</span></a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
@@ -110,28 +120,28 @@
                     <img src="tshirt.jpg" alt="Black Round Neck T-shirt">
                     <h3>Black Round Neck T-shirt</h3>
                     <p>Premium cotton, sleek fit, and breathable material. Ideal for everyday comfort and style.</p>
-                    <button>Add to Cart</button>
+                    <button onclick="addToCart('Black Round Neck T-shirt')">Add to Cart</button>
                 </div>
 
                 <div class="product-item">
                     <img src="cap.jpg" alt="Classic Cap">
                     <h3>Classic Cap</h3>
                     <p>Adjustable classic cap designed for all head sizes. Stay stylish under the sun.</p>
-                    <button>Add to Cart</button>
+                    <button onclick="addToCart('Classic Cap')">Add to Cart</button>
                 </div>
 
                 <div class="product-item">
                     <img src="hoodie.jpg" alt="Premium Hoodie">
                     <h3>Premium Hoodie</h3>
                     <p>Ultra-soft, durable hoodie perfect for cozy days and casual outings.</p>
-                    <button>Add to Cart</button>
+                    <button onclick="addToCart('Premium Hoodie')">Add to Cart</button>
                 </div>
 
                 <div class="product-item">
                     <img src="joggers.jpg" alt="Comfort Joggers">
                     <h3>Comfort Joggers</h3>
                     <p>Move freely and comfortably in our stretchable joggers. Great for workouts or lounging.</p>
-                    <button>Add to Cart</button>
+                    <button onclick="addToCart('Comfort Joggers')">Add to Cart</button>
                 </div>
 
             </div>
@@ -142,33 +152,24 @@
         <p>&copy; 2025 Marvin Luxe Store. All rights reserved.</p>
     </footer>
 
-    <!-- Cart Functionality Script -->
     <script>
-        // Get all "Add to Cart" buttons
-        const addToCartButtons = document.querySelectorAll('.product-item button');
-
-        addToCartButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const productItem = button.parentElement;
-                const productName = productItem.querySelector('h3').innerText;
-                const productImage = productItem.querySelector('img').getAttribute('src');
-
-                let cart = JSON.parse(localStorage.getItem('cart')) || [];
-
-                // Add product to cart
-                cart.push({ name: productName, image: productImage });
-
-                // Save cart back to localStorage
-                localStorage.setItem('cart', JSON.stringify(cart));
-
-                alert(`${productName} has been added to your cart!`);
-            });
+        // Load cart count on page load
+        document.addEventListener('DOMContentLoaded', function () {
+            updateCartCount();
         });
+
+        function addToCart(productName) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.push(productName);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartCount();
+        }
+
+        function updateCartCount() {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            document.getElementById('cart-count').textContent = cart.length;
+        }
     </script>
-
-</body>
-
-</html>
 
 </body>
 
