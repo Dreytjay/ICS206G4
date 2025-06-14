@@ -3,24 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marvin Luxe Store - Home</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Marvin Luxe Store</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <h1>Welcome to Marvin Luxe Store</h1>
+        <h1>Marvin Luxe Store</h1>
         <nav>
             <a href="index.html">Home</a>
-            <a href="products.html">Products</a>
-            <a href="contact.html">Contact</a>
+            <a href="cart.html">Cart</a>
         </nav>
     </header>
+
     <main>
-        <h2>Your go-to store for premium fashion items.</h2>
-        <p>Browse our latest collection of quality fashion pieces.</p>
+        <h2>Our Products</h2>
+        <div class="product-list">
+            <div class="product">
+                <img src="black-tshirt.jpeg" alt="Black T-Shirt">
+                <h3>Black Round Neck T-Shirt</h3>
+                <p>Comfortable, stylish, and made with premium cotton. Perfect for everyday wear.</p>
+                <button onclick="addToCart('Black Round Neck T-Shirt')">Add to Cart</button>
+            </div>
+
+            <div class="product">
+                <img src="cap.jpeg" alt="Cap">
+                <h3>Classic Cap</h3>
+                <p>Trendy and adjustable cap to complete your casual look.</p>
+                <button onclick="addToCart('Classic Cap')">Add to Cart</button>
+            </div>
+
+            <div class="product">
+                <img src="hoodie.jpeg" alt="Hoodie">
+                <h3>Comfy Hoodie</h3>
+                <p>Warm, stylish hoodie for all seasons. Made with soft fleece lining.</p>
+                <button onclick="addToCart('Comfy Hoodie')">Add to Cart</button>
+            </div>
+
+            <div class="product">
+                <img src="joggers.jpeg" alt="Joggers">
+                <h3>Classic Joggers</h3>
+                <p>Comfort fit joggers perfect for sports and lounging.</p>
+                <button onclick="addToCart('Classic Joggers')">Add to Cart</button>
+            </div>
+        </div>
     </main>
-    <footer>
-        <p>&copy; 2025 Marvin Luxe Store. All rights reserved.</p>
-    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
