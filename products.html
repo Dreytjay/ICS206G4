@@ -95,7 +95,7 @@
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="products.html">Products</a></li>
-                <li><a href="cart.html">Cart</a></li> <!-- Cart link added -->
+                <li><a href="cart.html">Cart</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
@@ -141,6 +141,34 @@
     <footer>
         <p>&copy; 2025 Marvin Luxe Store. All rights reserved.</p>
     </footer>
+
+    <!-- Cart Functionality Script -->
+    <script>
+        // Get all "Add to Cart" buttons
+        const addToCartButtons = document.querySelectorAll('.product-item button');
+
+        addToCartButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const productItem = button.parentElement;
+                const productName = productItem.querySelector('h3').innerText;
+                const productImage = productItem.querySelector('img').getAttribute('src');
+
+                let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+                // Add product to cart
+                cart.push({ name: productName, image: productImage });
+
+                // Save cart back to localStorage
+                localStorage.setItem('cart', JSON.stringify(cart));
+
+                alert(`${productName} has been added to your cart!`);
+            });
+        });
+    </script>
+
+</body>
+
+</html>
 
 </body>
 
