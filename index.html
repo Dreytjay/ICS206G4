@@ -24,6 +24,7 @@
         nav ul {
             list-style: none;
             padding: 0;
+            margin: 0;
         }
 
         nav ul li {
@@ -35,6 +36,15 @@
             color: #fff;
             text-decoration: none;
             font-weight: bold;
+        }
+
+        nav ul li a .cart-count {
+            background-color: red;
+            color: white;
+            border-radius: 50%;
+            padding: 2px 8px;
+            font-size: 0.8em;
+            margin-left: 5px;
         }
 
         .home-section {
@@ -84,7 +94,7 @@
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="products.html">Products</a></li>
-                <li><a href="cart.html">Cart</a></li> <!-- Cart link added -->
+                <li><a href="cart.html">Cart <span id="cart-count" class="cart-count">0</span></a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
@@ -101,6 +111,15 @@
     <footer>
         <p>&copy; 2025 Marvin Luxe Store. All rights reserved.</p>
     </footer>
+
+    <script>
+        // Cart count script
+        document.addEventListener('DOMContentLoaded', function () {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            let cartCount = cart.length;
+            document.getElementById('cart-count').textContent = cartCount;
+        });
+    </script>
 
 </body>
 
