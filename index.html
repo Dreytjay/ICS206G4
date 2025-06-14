@@ -37,29 +37,33 @@
             font-weight: bold;
         }
 
-        .products {
-            padding: 20px;
+        .home-section {
+            padding: 50px;
             text-align: center;
         }
 
-        .product-list {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
+        .home-section h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
         }
 
-        .product-item {
-            background-color: #fff;
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 250px;
+        .home-section p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
         }
 
-        .product-item img {
-            width: 100%;
+        .home-section a {
+            background-color: #000;
+            color: #fff;
+            padding: 12px 25px;
+            text-decoration: none;
+            font-size: 1em;
             border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .home-section a:hover {
+            background-color: #333;
         }
 
         footer {
@@ -86,35 +90,10 @@
     </header>
 
     <main>
-        <section class="products">
-            <h2>Featured Products</h2>
-            <div class="product-list">
-
-                <div class="product-item">
-                    <img src="tshirt.jpg" alt="Black Round Neck T-shirt">
-                    <h3>Black Round Neck T-shirt</h3>
-                    <p>Crafted from premium cotton, this black t-shirt offers a soft feel and a perfect fit for casual and urban styles.</p>
-                </div>
-
-                <div class="product-item">
-                    <img src="cap.jpg" alt="Classic Cap">
-                    <h3>Classic Cap</h3>
-                    <p>Stay cool and stylish with this adjustable cap, designed for comfort and a timeless streetwear look.</p>
-                </div>
-
-                <div class="product-item">
-                    <img src="hoodie.jpg" alt="Premium Hoodie">
-                    <h3>Premium Hoodie</h3>
-                    <p>Experience unmatched warmth with our soft, durable hoodie — perfect for both chilling and flexing.</p>
-                </div>
-
-                <div class="product-item">
-                    <img src="joggers.jpg" alt="Comfort Joggers">
-                    <h3>Comfort Joggers</h3>
-                    <p>Flexible, breathable joggers designed for movement, perfect for workouts, travel, or lounging in style.</p>
-                </div>
-
-            </div>
+        <section class="home-section">
+            <h2>Welcome to Marvin Luxe Store</h2>
+            <p>Your go-to destination for premium fashion essentials.</p>
+            <a href="products.html">View Products</a>
         </section>
     </main>
 
