@@ -1,60 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Products - Marvin Luxe Store</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #000;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .products {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .product-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .product-item {
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 250px;
+        }
+
+        .product-item img {
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        footer {
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+    </style>
 </head>
+
 <body>
+
     <header>
         <h1>Marvin Luxe Store</h1>
         <nav>
-            <a href="index.html">Home</a>
-            <a href="products.html">Products</a>
-            <a href="cart.html">Cart</a>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
         </nav>
     </header>
 
-    <section class="products">
-        <h2>Our Products</h2>
-        <div class="product-list">
+    <main>
+        <section class="products">
+            <h2>Our Full Collection</h2>
+            <div class="product-list">
 
-            <div class="product">
-                <img src="tshirt.jpg" alt="Black Round Neck T-Shirt">
-                <h3>Black Round Neck T-Shirt</h3>
-                <p>Premium cotton t-shirt, soft and durable. Perfect fit for everyday use.</p>
-                <button onclick="addToCart('Black Round Neck T-Shirt')">Add to Cart</button>
+                <div class="product-item">
+                    <img src="tshirt.jpg" alt="Black Round Neck T-shirt">
+                    <h3>Black Round Neck T-shirt</h3>
+                    <p>Premium cotton, sleek fit, and breathable material. Ideal for everyday comfort and style.</p>
+                </div>
+
+                <div class="product-item">
+                    <img src="cap.jpg" alt="Classic Cap">
+                    <h3>Classic Cap</h3>
+                    <p>Adjustable classic cap designed for all head sizes. Stay stylish under the sun.</p>
+                </div>
+
+                <div class="product-item">
+                    <img src="hoodie.jpg" alt="Premium Hoodie">
+                    <h3>Premium Hoodie</h3>
+                    <p>Ultra-soft, durable hoodie perfect for cozy days and casual outings.</p>
+                </div>
+
+                <div class="product-item">
+                    <img src="joggers.jpg" alt="Comfort Joggers">
+                    <h3>Comfort Joggers</h3>
+                    <p>Move freely and comfortably in our stretchable joggers. Great for workouts or lounging.</p>
+                </div>
+
             </div>
-
-            <div class="product">
-                <img src="cap.jpg" alt="Cap">
-                <h3>Cap</h3>
-                <p>Stylish and adjustable cap. Keeps you cool and trendy.</p>
-                <button onclick="addToCart('Cap')">Add to Cart</button>
-            </div>
-
-            <div class="product">
-                <img src="hoodie.jpg" alt="Hoodie">
-                <h3>Hoodie</h3>
-                <p>Comfortable and cozy hoodie with a sleek design.</p>
-                <button onclick="addToCart('Hoodie')">Add to Cart</button>
-            </div>
-
-            <div class="product">
-                <img src="joggers.jpg" alt="Joggers">
-                <h3>Joggers</h3>
-                <p>Perfectly tailored joggers for style and comfort.</p>
-                <button onclick="addToCart('Joggers')">Add to Cart</button>
-            </div>
-
-        </div>
-    </section>
+        </section>
+    </main>
 
     <footer>
-        <p>&copy; 2025 Marvin Luxe Store</p>
+        <p>&copy; 2025 Marvin Luxe Store. All rights reserved.</p>
     </footer>
 
-    <script src="script.js"></script>
 </body>
+
 </html>
