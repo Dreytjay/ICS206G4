@@ -29,12 +29,24 @@
         nav ul li {
             display: inline;
             margin: 0 15px;
+            position: relative;
         }
 
         nav ul li a {
             color: #fff;
             text-decoration: none;
             font-weight: bold;
+        }
+
+        .cart-count {
+            background-color: red;
+            color: white;
+            border-radius: 50%;
+            padding: 2px 8px;
+            font-size: 12px;
+            position: absolute;
+            top: -10px;
+            right: -10px;
         }
 
         .cart {
@@ -101,7 +113,7 @@
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="products.html">Products</a></li>
-                <li><a href="cart.html">Cart</a></li>
+                <li><a href="cart.html">Cart <span id="cart-count" class="cart-count">0</span></a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
@@ -119,10 +131,14 @@
     </footer>
 
     <script>
-        // Get cart from localStorage
+        // Load cart from localStorage
         let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
         const cartItemsContainer = document.getElementById('cart-items');
+        const cartCountElement = document.getElementById('cart-count');
+
+        // Display cart count badge
+        cartCountElement.textContent = cart.length;
 
         if (cart.length === 0) {
             cartItemsContainer.innerHTML = '<p>Your cart is empty.</p>';
