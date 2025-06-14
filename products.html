@@ -1,14 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Products - Group 4 E-commerce Showcase</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Products - Marvin Luxe Store</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #000;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .products {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .product-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .product-item {
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 250px;
+        }
+
+        .product-item img {
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        footer {
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+    </style>
 </head>
+
 <body>
+
     <header>
-        <h1>Our Products</h1>
+        <h1>Marvin Luxe Store</h1>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -19,49 +86,43 @@
     </header>
 
     <main>
-        <h2>Product Showcase</h2>
+        <section class="products">
+            <h2>Our Full Collection</h2>
+            <div class="product-list">
 
-        <!-- Product Table -->
-        <table class="product-table">
-            <thead>
-                <tr>
-                    <th>Product Image</th>
-                    <th>Product Name</th>
-                    <th>Price</th>
-                    <th>Details</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><img src="images/placeholder1.jpg" alt="Product 1" width="100"></td>
-                    <td>Product 1</td>
-                    <td>₦10,000</td>
-                    <td><a href="product-details.html" class="btn">View</a></td>
-                </tr>
-                <tr>
-                    <td><img src="images/placeholder2.jpg" alt="Product 2" width="100"></td>
-                    <td>Product 2</td>
-                    <td>₦12,500</td>
-                    <td><a href="product-details.html" class="btn">View</a></td>
-                </tr>
-                <tr>
-                    <td><img src="images/placeholder3.jpg" alt="Product 3" width="100"></td>
-                    <td>Product 3</td>
-                    <td>₦15,000</td>
-                    <td><a href="product-details.html" class="btn">View</a></td>
-                </tr>
-                <tr>
-                    <td><img src="images/placeholder4.jpg" alt="Product 4" width="100"></td>
-                    <td>Product 4</td>
-                    <td>₦18,000</td>
-                    <td><a href="product-details.html" class="btn">View</a></td>
-                </tr>
-            </tbody>
-        </table>
+                <div class="product-item">
+                    <img src="tshirt.jpg" alt="Black Round Neck T-shirt">
+                    <h3>Black Round Neck T-shirt</h3>
+                    <p>Premium cotton, sleek fit, and breathable material. Ideal for everyday comfort and style.</p>
+                </div>
+
+                <div class="product-item">
+                    <img src="cap.jpg" alt="Classic Cap">
+                    <h3>Classic Cap</h3>
+                    <p>Adjustable classic cap designed for all head sizes. Stay stylish under the sun.</p>
+                </div>
+
+                <div class="product-item">
+                    <img src="hoodie.jpg" alt="Premium Hoodie">
+                    <h3>Premium Hoodie</h3>
+                    <p>Ultra-soft, durable hoodie perfect for cozy days and casual outings.</p>
+                </div>
+
+                <div class="product-item">
+                    <img src="joggers.jpg" alt="Comfort Joggers">
+                    <h3>Comfort Joggers</h3>
+                    <p>Move freely and comfortably in our stretchable joggers. Great for workouts or lounging.</p>
+                </div>
+
+            </div>
+        </section>
     </main>
 
     <footer>
-        <p>&copy; 2025 ICS 206 Group 4. All rights reserved.</p>
+        <p>&copy; 2025 Marvin Luxe Store. All rights reserved.</p>
     </footer>
+
 </body>
+
+</html>
 </html>
