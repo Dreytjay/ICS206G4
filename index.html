@@ -1,14 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Group 4 E-commerce Product Showcase</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Marvin Luxe Store</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #000;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .products {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .product-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .product-item {
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 250px;
+        }
+
+        .product-item img {
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        footer {
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+    </style>
 </head>
+
 <body>
+
     <header>
-        <h1>Welcome to Group 4 E-commerce Showcase</h1>
+        <h1>Marvin Luxe Store</h1>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -19,33 +86,42 @@
     </header>
 
     <main>
-        <section class="hero">
-            <h2>Discover Amazing Products</h2>
-            <p>Explore our wide range of quality items showcased just for you!</p>
-            <a href="products.html" class="btn">View Products</a>
-        </section>
-
-        <section class="featured-products">
+        <section class="products">
             <h2>Featured Products</h2>
             <div class="product-list">
-                <div class="product-card">
-                    <img src="images/placeholder1.jpg" alt="Product 1">
-                    <h3>Product 1</h3>
-                    <p>₦10,000</p>
-                    <a href="product-details.html" class="btn">View Details</a>
+
+                <div class="product-item">
+                    <img src="tshirt.jpg" alt="Black Round Neck T-shirt">
+                    <h3>Black Round Neck T-shirt</h3>
+                    <p>Crafted from premium cotton, this black t-shirt offers a soft feel and a perfect fit for casual and urban styles.</p>
                 </div>
-                <div class="product-card">
-                    <img src="images/placeholder2.jpg" alt="Product 2">
-                    <h3>Product 2</h3>
-                    <p>₦12,500</p>
-                    <a href="product-details.html" class="btn">View Details</a>
+
+                <div class="product-item">
+                    <img src="cap.jpg" alt="Classic Cap">
+                    <h3>Classic Cap</h3>
+                    <p>Stay cool and stylish with this adjustable cap, designed for comfort and a timeless streetwear look.</p>
                 </div>
+
+                <div class="product-item">
+                    <img src="hoodie.jpg" alt="Premium Hoodie">
+                    <h3>Premium Hoodie</h3>
+                    <p>Experience unmatched warmth with our soft, durable hoodie — perfect for both chilling and flexing.</p>
+                </div>
+
+                <div class="product-item">
+                    <img src="joggers.jpg" alt="Comfort Joggers">
+                    <h3>Comfort Joggers</h3>
+                    <p>Flexible, breathable joggers designed for movement, perfect for workouts, travel, or lounging in style.</p>
+                </div>
+
             </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2025 ICS 206 Group 4. All rights reserved.</p>
+        <p>&copy; 2025 Marvin Luxe Store. All rights reserved.</p>
     </footer>
+
 </body>
+
 </html>
