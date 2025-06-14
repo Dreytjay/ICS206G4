@@ -38,22 +38,49 @@
         }
 
         .cart {
-            padding: 20px;
+            padding: 50px;
             text-align: center;
         }
 
-        .cart ul {
-            list-style-type: none;
-            padding: 0;
+        .cart h2 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
         }
 
-        .cart li {
+        .cart-items {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .cart-item {
             background-color: #fff;
-            margin: 10px auto;
             padding: 15px;
-            width: 300px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 250px;
+            text-align: center;
+        }
+
+        .cart-item img {
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        .cart-item button {
+            background-color: #000;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            margin-top: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .cart-item button:hover {
+            background-color: #444;
         }
 
         footer {
@@ -75,20 +102,50 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="products.html">Products</a></li>
                 <li><a href="cart.html">Cart</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <section class="cart">
-        <h2>Your Cart</h2>
-        <ul id="cart-items"></ul>
-    </section>
+    <main>
+        <section class="cart">
+            <h2>Your Cart</h2>
+            <div id="cart-items" class="cart-items"></div>
+        </section>
+    </main>
 
     <footer>
         <p>&copy; 2025 Marvin Luxe Store. All rights reserved.</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        // Get cart from localStorage
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        const cartItemsContainer = document.getElementById('cart-items');
+
+        if (cart.length === 0) {
+            cartItemsContainer.innerHTML = '<p>Your cart is empty.</p>';
+        } else {
+            cart.forEach((item, index) => {
+                const itemDiv = document.createElement('div');
+                itemDiv.classList.add('cart-item');
+                itemDiv.innerHTML = `
+                    <img src="${item.image}" alt="${item.name}">
+                    <h3>${item.name}</h3>
+                    <button onclick="removeFromCart(${index})">Remove</button>
+                `;
+                cartItemsContainer.appendChild(itemDiv);
+            });
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            location.reload();
+        }
+    </script>
+
 </body>
 
 </html>
