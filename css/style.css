@@ -1,80 +1,106 @@
-body {
-    font-family: Arial, sans-serif;
+/* Reset default browser styles */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
     background-color: #f4f4f4;
     color: #333;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px 0;
 }
 
 header {
     background-color: #000;
     color: #fff;
-    padding: 1rem;
+    padding: 20px 0;
+}
+
+header h1 {
     text-align: center;
+    margin-bottom: 10px;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
 }
 
 nav a {
-    margin: 0 1rem;
     color: #fff;
     text-decoration: none;
     font-weight: bold;
 }
 
+nav a.active, nav a:hover {
+    text-decoration: underline;
+}
+
 .hero {
+    background-image: url('IMG_0271.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
     text-align: center;
-    padding: 5rem 1rem;
-    background-color: #333;
-    color: white;
 }
 
-.hero .btn {
-    display: inline-block;
-    padding: 0.7rem 1.5rem;
-    background-color: #ff6600;
-    color: white;
+.hero h2 {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.btn {
+    background-color: #000;
+    color: #fff;
+    padding: 10px 20px;
     text-decoration: none;
-    margin-top: 1rem;
+    font-size: 18px;
+    border-radius: 5px;
 }
 
-.products, .cart {
-    padding: 2rem;
-}
-
-.product-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-}
-
-.product {
-    background-color: white;
-    padding: 1rem;
-    border-radius: 8px;
+.features {
+    padding: 40px 0;
     text-align: center;
 }
 
-.product img {
-    width: 100%;
-    height: auto;
-    border-radius: 5px;
+.feature-grid {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 20px;
 }
 
-button {
-    padding: 0.5rem 1rem;
-    background-color: #ff6600;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #e65c00;
+.feature {
+    background-color: #fff;
+    padding: 20px;
+    margin: 10px;
+    flex: 1 1 250px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-radius: 8px;
 }
 
 footer {
-    text-align: center;
-    padding: 1rem;
     background-color: #000;
-    color: white;
+    color: #fff;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 30px;
 }
